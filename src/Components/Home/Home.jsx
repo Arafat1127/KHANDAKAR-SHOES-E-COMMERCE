@@ -136,38 +136,3 @@ const Home = () => {
 };
 
 export default Home;
-
-
-
-
-
-
-
-
-
-
-
-
-// import React, { useContext, useEffect, useState } from 'react';
-// import Products from './Products/Products';
-// import offerImg from "../../assets/images/offer-image.jpg"
-// import shoesOfferImg from "../../assets/images/shoes-offer.jpg"
-// import bagsOfferImg from "../../assets/images/bags-offer-image.jpg"
-// import { Toaster } from 'react-hot-toast';
-// import { CartContextApi } from '../../context/CartContext';
-// import Carousel from './Carousel';
-
-// const Home = () => {
-//     const { handleAddToCart } = useContext(CartContextApi);
-//     return (
-//         <div>
-//             <Toaster />
-
-//             <div className='my-40 flex justify-center w-[1700px]'>
-//                 <Products handleAddToCart={handleAddToCart} />
-//             </div>
-//         </div>
-//     );
-// };
-
-// export default Home;
