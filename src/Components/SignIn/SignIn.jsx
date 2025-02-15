@@ -9,15 +9,10 @@ import bgSignInImg from '../../assets/carousel/168371-mountain-surface_hub-highl
 
 const SignIn = () => {
     const { signIn } = useContext(AuthContext)
-    // const [users, setUsers] = useState({});
-    //console.log(users);
-
     const [error, setError] = useState("");
     const handleSignIn = (event) => {
-        //parameter event and preventDefault event stop the reload
         event.preventDefault();
         const form = event.target;
-        //const name = form.name.value;
         const email = form.email.value;
         const password = form.password.value;
         //console.log(email,password);
@@ -27,10 +22,8 @@ const SignIn = () => {
             .then((result) => {
                 const user = result.user;
                 console.log(user);
-                // setUsers(user);
             })
             .catch((error) => {
-                // console.log(error);
                 setError(error.message);
 
             });
