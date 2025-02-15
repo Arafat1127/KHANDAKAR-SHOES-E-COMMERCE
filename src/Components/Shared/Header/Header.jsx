@@ -46,7 +46,7 @@ const Header = () => {
             </li>
             <li className='text-white font-bold'>
                 <NavLink to='/orders'>
-                    <svg className="w-6 h-6 cart-count text-white dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                    <svg className="w-6 h-6   text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                         <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312" />
                     </svg>
                 </NavLink>
@@ -66,13 +66,20 @@ const Header = () => {
                             </svg>
                         </div>
                         {/* For small devices */}
-                        <ul tabIndex={0} className="menu menu-sm dropdown-content bg-black rounded-box z-[1] mt-3 w-52 p-2 shadow">
+                        <ul tabIndex={0} className="menu menu-sm opacity-50 z-50 dropdown-content bg-black rounded-box  mt-3 w-52 p-2 shadow">
                             {menuItems}
                         </ul>
                     </div>
                     <Link to="/" className="">
                         <img className='w-[180px] h-[auto] md:w-[320px] object-contain overflow-hidden' src={logo} alt="" />
                     </Link>
+                    <li className='px-3 md:px-7 lg:hidden text-white font-bold'>
+                        <NavLink to='/orders'>
+                            <svg className="w-6 h-6  " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312" />
+                            </svg>
+                        </NavLink>
+                    </li>
                 </div>
                 {/* For large devices */}
                 <div className="navbar-center hidden lg:flex">
@@ -100,7 +107,7 @@ const Header = () => {
             {/* Second Navbar (Fixed After Scroll) */}
             {showSecondNavbar && (
                 <div className={`flex justify-evenly items-center fixed  left-0 z-50 bg-white w-full shadow-md py-[10px] ${scrolling ? 'top-0' : 'top-[100px]'}`}>
-                    <motion.div className='w-[800px] flex justify-evenly items-center font-bold'>
+                    <motion.div className='w-[800px] flex justify-evenly items-center font-semibold md:font-bold'>
                         <div
                             className=''
                             onMouseEnter={() => setHoveredItem('men')}
@@ -118,7 +125,7 @@ const Header = () => {
                             onMouseEnter={() => setHoveredItem('women')}
                             onMouseLeave={() => setHoveredItem(null)}
                         >
-                            <Link to="/women-products" className=''>
+                            <Link to="/women-products" className='text-black cursor-pointer'>
                                 WOMEN
                             </Link>
                             <div
@@ -130,7 +137,7 @@ const Header = () => {
                             onMouseEnter={() => setHoveredItem('children')}
                             onMouseLeave={() => setHoveredItem(null)}
                         >
-                            <Link to="/children-products" className=''>
+                            <Link to="/children-products" className='text-black cursor-pointer'>
                                 CHILDREN
                             </Link>
                             <div
@@ -142,7 +149,7 @@ const Header = () => {
                             onMouseEnter={() => setHoveredItem('accessories')}
                             onMouseLeave={() => setHoveredItem(null)}
                         >
-                            <Link to="/accessories" className=''>
+                            <Link to="/accessories" className='text-black cursor-pointer'>
                                 ACCESSORIES
                             </Link>
                             <div

@@ -1,6 +1,5 @@
 import { faGithub, faGoogle } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import loginImage from "../../assets/images/signin-image.webp"
 import { Link } from 'react-router-dom';
 import { useContext, useState } from 'react';
 import { signInWithEmailAndPassword, } from 'firebase/auth';
@@ -10,36 +9,34 @@ import bgSignInImg from '../../assets/carousel/168371-mountain-surface_hub-highl
 
 const SignIn = () => {
     const { signIn } = useContext(AuthContext)
-    const [users, setUsers] = useState({});
-    const [error, setError] = useState("")
-    // console.log(users);
+    // const [users, setUsers] = useState({});
+    //console.log(users);
 
+    const [error, setError] = useState("");
     const handleSignIn = (event) => {
+        //parameter event and preventDefault event stop the reload
         event.preventDefault();
         const form = event.target;
+        //const name = form.name.value;
         const email = form.email.value;
         const password = form.password.value;
-        // const confirmPassword = form.confirmPassword.value;
-        // const finalPassword = password + confirmPassword;
+        //console.log(email,password);
 
-        SignIn(email, password)
+
+        signIn(email, password)
             .then((result) => {
                 const user = result.user;
                 console.log(user);
-
-                // setUsers(user)
-
+                // setUsers(user);
             })
             .catch((error) => {
-                const errorMessage = error.message
-                return setError(errorMessage)
+                // console.log(error);
+                setError(error.message);
 
-            })
-
+            });
         form.reset();
-        setError('');
-    }
-
+        setError("");
+    };
     return (
         <div className=" bg-custom-image object-contain bg-cover bg-center h-auto" style={{ backgroundImage: `url(${bgSignInImg})` }}>
 
@@ -70,7 +67,7 @@ const SignIn = () => {
                                     type="email"
                                     name="email"
                                     placeholder='Email'
-                                    className='input input-bordered md:w-[428px] font-bold bg-[#f3f5f7]' required />
+                                    className='input input-bordered md:w-[428px] text-black font-bold bg-[#f3f5f7]' required />
                             </div>
 
                             <div className=''>
@@ -82,7 +79,7 @@ const SignIn = () => {
                                         type="password"
                                         name="password"
                                         placeholder='Password'
-                                        className='input input-bordered md:w-[428px] font-bold bg-[#f3f5f7]' required />
+                                        className='input input-bordered md:w-[428px] text-black font-bold bg-[#f3f5f7]' required />
                                     <p className='text-red-500'>{error}</p>
                                     <label className="label">
                                         <a href="#" className="label-text-alt font-bold link link-hover">Forgot password?</a>

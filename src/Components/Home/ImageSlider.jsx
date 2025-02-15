@@ -26,15 +26,15 @@ const ImageSlider = () => {
     useEffect(() => {
         const intervalId = setInterval(() => {
             setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-        }, 4000);
+        }, 6000);
 
         return () => clearInterval(intervalId);
     }, [images.length]);
 
     return (
-        <div className="relative overflow-hidden w-full mt-[37px]">
+        <div className="relative overflow-hidden w-full mt-[45px]">
             <div
-                className="flex transition-transform duration-1000 ease-in-out"
+                className="flex transition-transform duration-300 ease-in-out"
                 style={{ transform: `translateX(-${currentIndex * 100}%)` }}
             >
                 {images.map((image, index) => (
@@ -42,7 +42,7 @@ const ImageSlider = () => {
                         <img
                             src={image}
                             alt={`carousel-image-${index}`}
-                            className="w-full   xl:h-[750px] h-[200px]  md:object-contain cursor-pointer"
+                            className="w-full   h-auto   object-contain cursor-pointer"
                         />
                     </div>
                 ))}
@@ -53,7 +53,7 @@ const ImageSlider = () => {
                 {images.map((_, index) => (
                     <div
                         key={index}
-                        className={`w-1.5 h-1.5 lg:w-2.5 lg:h-2.5 outline outline-1 md:outline-2 outline-red-600 rounded-full bg-red-500 ${currentIndex === index ? "p-1" : "bg-opacity-0"
+                        className={`w-1.5 h-1.5 lg:w-2.5 lg:h-2.5  outline outline-1 md:outline-2 outline-red-600 rounded-full bg-red-500 ${currentIndex === index ? "p-1" : "bg-opacity-0"
                             } cursor-pointer transition-all`}
                         onClick={() => setCurrentIndex(index)}
                     />

@@ -1,10 +1,10 @@
 import React, { useContext, useEffect, useState } from 'react';
-import Products from './Products/Products';
 import { Toaster } from 'react-hot-toast';
 import ImageSlider from './ImageSlider';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleUp } from '@fortawesome/free-solid-svg-icons';
 import HomeProducts from './Products/HomeProducts';
+import Product from './Products/Product';
 const Home = () => {
     const [isVisible, setIsVisible] = useState(false);
     const toggleVisibility = () => {
@@ -36,8 +36,8 @@ const Home = () => {
                 <ImageSlider></ImageSlider>
             </div>
             <div className='flex justify-center my-[10px] md:my-[20px] lg:my-[25px] '>
-                <div className='mx-1 xl:w-5/6 '>
-                    <img src="https://cdn.shopify.com/s/files/1/2287/9679/files/AR4.jpg?v=1733380242" alt="" className='cursor-pointer h-[75px]' />
+                <div className='mx-1 lg:w-5/6 '>
+                    <img src="https://cdn.shopify.com/s/files/1/2287/9679/files/AR4.jpg?v=1733380242" alt="" className='cursor-pointer h-[75px] md:h-auto' />
                 </div>
             </div>
             <div className=" flex justify-center">
@@ -57,18 +57,16 @@ const Home = () => {
                 </div>
             </div>
             <div className='flex justify-center my-[25px]'>
-                <div className='mx-1 xl:w-5/6'>
-                    <img src="https://cdn.shopify.com/s/files/1/2287/9679/files/GV-new-3-web-strip-banner.jpg" alt="" className='cursor-pointer w-full h-[75px]' />
+                <div className='mx-1 lg:w-5/6'>
+                    <img src="https://cdn.shopify.com/s/files/1/2287/9679/files/GV-new-3-web-strip-banner.jpg" alt="" className='cursor-pointer w-full h-[75px] md:h-auto' />
                 </div>
             </div>
-            <div className='flex justify-center items-center mt-[15px] xl:my-[80px] font-bold xl:text-3xl'>
+            <div className='flex justify-center items-center mt-[15px] md:mt-[40px] xl:my-[80px] font-bold xl:text-3xl'>
                 <h1>CHOOSE YOUR FAVOURITE PRODUCT</h1>
             </div>
-            <div className='my-8 xl:my-20 xl:flex xl:justify-center'>
-                <Products />
-            </div>
+            <Product></Product>
             <div className=''>
-                <div className='flex  justify-center items-center object-contain overflow-hidden    gap-10'>
+                <div className='flex  justify-center items-center object-contain overflow-hidden mx-2 gap-2'>
                     <div className=' relative  overflow-hidden cursor-pointer'>
                         <img className=' object-contain relative z-0  transition-all duration-500 hover:scale-110' src="https://www.batabd.com/cdn/shop/files/NS-web-square-banner2_800x800_crop_center.jpg?v=1738834638" alt="" />
                     </div>
@@ -78,40 +76,48 @@ const Home = () => {
                 </div>
             </div>
             <HomeProducts></HomeProducts>
-            <div className='flex justify-center items-center my-[80px] font-bold text-3xl'>
+            <div className='flex justify-center items-center xl:my-[80px] font-bold text-xl lg:text-3xl'>
                 <h1>PICK YOUR FAVOURITES</h1>
             </div>
-            <div className="flex justify-center my-[40px]">
-                <div className='flex justify-center items-center w-5/6 gap-10'>
-                    <div className=" h-[500px] w-[500px] relative  overflow-hidden cursor-pointer">
+            <div className="flex justify-center md:w-5/6 my-[20px] md:my-[40px]">
+                <div className='grid grid-cols-2 xl:grid-cols-3  gap-2 xl:gap-4 mx-2'>
+                    <div className=" lg:h-[500px] lg:w-[500px] relative  overflow-hidden cursor-pointer">
                         <img className='object-contain relative z-0  transition-all duration-500 hover:scale-110' src="https://www.batabd.com/cdn/shop/files/women_fba2b8ad-586d-4fce-8e62-50d0486dbe44_800x800_crop_center.jpg?v=1727068376" alt="" />
                     </div>
-                    <div className=" h-[500px] w-[500px] relative  overflow-hidden cursor-pointer">
+                    <div className=" lg:h-[500px] lg:w-[500px] relative  overflow-hidden cursor-pointer">
                         <img className='object-contain relative z-0  transition-all duration-500 hover:scale-110' src="https://www.batabd.com/cdn/shop/files/mens-formal_800x800_crop_center.jpg?v=1727068128" alt="" />
                     </div>
-                    <div className=" h-[500px] w-[500px] relative  overflow-hidden cursor-pointer">
+                    <div className=" lg:h-[500px] lg:w-[500px] relative  overflow-hidden cursor-pointer">
                         <img className='object-contain relative z-0  transition-all duration-500 hover:scale-110' src="https://www.batabd.com/cdn/shop/files/bags_feff123a-1643-4e72-8e3b-762049436368_800x800_crop_center.jpg?v=1727068282" alt="" />
+                    </div>
+                    <div className="xl:hidden  lg:h-[500px] lg:w-[500px] relative  overflow-hidden cursor-pointer">
+                        <img className='object-contain relative z-0  transition-all duration-500 hover:scale-110' src="https://www.batabd.com/cdn/shop/files/women_fba2b8ad-586d-4fce-8e62-50d0486dbe44_800x800_crop_center.jpg?v=1727068376" alt="" />
                     </div>
                 </div>
             </div>
-            <div className='flex justify-center items-center my-[80px] font-bold text-3xl'>
+            <div className='flex justify-center items-center my-[30px] lg:my-[80px] font-bold text-xl lg:text-3xl'>
                 <h1>OUR OTHER EVENTS</h1>
             </div>
-            <div className='flex justify-center items-center my-10 gap-20'>
-                <div className="h-[250px] w-[250px] relative  overflow-hidden cursor-pointer">
-                    <img className='object-contain relative z-0  transition-all duration-500 hover:scale-110' src="https://www.batabd.com/cdn/shop/files/north_640x.jpg?v=1720336875" alt="" />
-                </div>
-                <div className="h-[250px] w-[250px] relative  overflow-hidden cursor-pointer">
-                    <img className='object-contain relative z-0  transition-all duration-500 hover:scale-110' src="https://www.batabd.com/cdn/shop/files/234_fefc05a8-6063-42e9-a013-119ac6f8d7a8_640x.jpg?v=1720936117" alt="" />
-                </div>
-                <div className="h-[250px] w-[250px] relative  overflow-hidden cursor-pointer">
-                    <img className='object-contain relative z-0  transition-all duration-500 hover:scale-110' src="https://www.batabd.com/cdn/shop/files/comp1_640x.jpg?v=1692859629" alt="" />
-                </div>
-                <div className="h-[250px] w-[250px] relative  overflow-hidden cursor-pointer">
-                    <img className='object-contain relative z-0  transition-all duration-500 hover:scale-110' src="https://www.batabd.com/cdn/shop/files/north1_640x.jpg?v=1692859497" alt="" />
-                </div>
-                <div className="h-[250px] w-[250px] relative  overflow-hidden cursor-pointer">
-                    <img className='object-contain relative z-0  transition-all duration-500 hover:scale-110' src="https://www.batabd.com/cdn/shop/files/aishoe_640x.jpg?v=1720338268" alt="" />
+            <div className=" my-10 ">
+                <div className='grid grid-cols-2  gap-3 mx-2'>
+                    <div className="lg:h-[250px] lg:w-[250px] relative  overflow-hidden cursor-pointer">
+                        <img className='object-contain relative z-0  transition-all duration-500 hover:scale-110' src="https://www.batabd.com/cdn/shop/files/north_640x.jpg?v=1720336875" alt="" />
+                    </div>
+                    <div className="lg:h-[250px] lg:w-[250px] relative  overflow-hidden cursor-pointer">
+                        <img className='object-contain relative z-0  transition-all duration-500 hover:scale-110' src="https://www.batabd.com/cdn/shop/files/234_fefc05a8-6063-42e9-a013-119ac6f8d7a8_640x.jpg?v=1720936117" alt="" />
+                    </div>
+                    <div className="lg:h-[250px] lg:w-[250px] relative  overflow-hidden cursor-pointer">
+                        <img className='object-contain relative z-0  transition-all duration-500 hover:scale-110' src="https://www.batabd.com/cdn/shop/files/comp1_640x.jpg?v=1692859629" alt="" />
+                    </div>
+                    <div className="lg:h-[250px] lg:w-[250px] relative  overflow-hidden cursor-pointer">
+                        <img className='object-contain relative z-0  transition-all duration-500 hover:scale-110' src="https://www.batabd.com/cdn/shop/files/north1_640x.jpg?v=1692859497" alt="" />
+                    </div>
+                    <div className="lg:h-[250px] lg:w-[250px] relative  overflow-hidden cursor-pointer">
+                        <img className='object-contain relative z-0  transition-all duration-500 hover:scale-110' src="https://www.batabd.com/cdn/shop/files/aishoe_640x.jpg?v=1720338268" alt="" />
+                    </div>
+                    <div className="lg:hidden lg:h-[250px] lg:w-[250px] relative  overflow-hidden cursor-pointer">
+                        <img className='object-contain relative z-0  transition-all duration-500 hover:scale-110' src="https://www.batabd.com/cdn/shop/files/north_640x.jpg?v=1720336875" alt="" />
+                    </div>
                 </div>
             </div>
             <div>
